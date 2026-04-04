@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maya Pankiw</title>
-
     <style>
         :root {
             --bg: #F3F1E8;
@@ -50,212 +49,377 @@
             color: var(--white-soft);
             text-align: center;
             padding: 16px 0;
+            font-size: 0.95rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             font-style: italic;
         }
 
         .hero-content {
-            padding: 34px;
+            padding: 34px 32px 30px;
         }
 
         h1 {
             margin: 0 0 10px 0;
-            font-size: 3rem;
+            font-size: 3.1rem;
+            line-height: 1.05;
             color: var(--accent-dark);
         }
 
         .subtitle {
+            margin: 0;
             color: var(--muted);
+            font-size: 1.08rem;
         }
 
         .nav {
-            margin-top: 24px;
+            margin-top: 26px;
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
         .nav a {
             text-decoration: none;
-            background: var(--accent);
             color: var(--white-soft);
+            background: var(--accent);
             padding: 10px 18px;
             border-radius: 999px;
             font-weight: 600;
+            transition: 0.2s ease;
         }
 
         .nav a:hover {
             background: var(--accent-dark);
         }
 
+        section {
+            margin-top: 28px;
+        }
+
         .section-card {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 22px;
-            padding: 30px;
-            margin-top: 24px;
+            padding: 34px 28px;
         }
 
         h2 {
+            margin: 0 0 18px 0;
+            font-size: 2rem;
             color: var(--accent-dark);
+        }
+
+        h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+            color: var(--accent-dark);
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .muted {
+            color: var(--muted);
         }
 
         .about-flex {
             display: flex;
-            gap: 25px;
+            gap: 28px;
             align-items: center;
         }
 
         .headshot {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
+            width: 170px;
+            height: 170px;
             object-fit: cover;
+            border-radius: 50%;
             border: 4px solid var(--accent);
+            flex-shrink: 0;
         }
 
         .profile-links {
-            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
         }
 
         .profile-links a {
-            margin-right: 10px;
             text-decoration: none;
-            background: var(--accent-soft);
-            padding: 8px 14px;
-            border-radius: 999px;
             color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 9px 15px;
+            border-radius: 999px;
             font-weight: 600;
+        }
+
+        .profile-links a:hover {
+            background: var(--accent);
+            color: var(--white-soft);
         }
 
         .project-nav {
-            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
         }
 
         .project-nav a {
-            margin-right: 10px;
             text-decoration: none;
+            color: var(--accent-dark);
             background: var(--accent-soft);
             padding: 8px 14px;
             border-radius: 999px;
-            color: var(--accent-dark);
             font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-nav a:hover {
+            background: var(--accent);
+            color: var(--white-soft);
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 20px;
         }
 
         .project-card {
-            margin-top: 20px;
-            padding: 20px;
             border: 1px solid var(--border);
             border-radius: 18px;
+            padding: 22px;
+            background: rgba(255,255,255,0.35);
         }
 
         .project-image {
             width: 100%;
+            display: block;
             margin-top: 14px;
             border-radius: 14px;
+            border: 1px solid var(--border);
         }
 
-        .video {
-            margin-top: 15px;
+        .video-embed {
+            width: 100%;
+            height: 420px;
+            margin-top: 14px;
+            border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
+            background: #000;
         }
 
-        iframe {
+        .video-embed iframe {
             width: 100%;
-            height: 400px;
+            height: 100%;
             border: none;
         }
 
-        @media (max-width: 700px) {
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                padding: 24px 14px 50px;
+            }
+
+            .hero-content,
+            .section-card {
+                padding: 24px 20px;
+            }
+
+            h1 {
+                font-size: 2.3rem;
+            }
+
             .about-flex {
                 flex-direction: column;
                 text-align: center;
             }
+
+            .profile-links {
+                justify-content: center;
+            }
+
+            .headshot {
+                width: 140px;
+                height: 140px;
+            }
+
+            .nav,
+            .project-nav {
+                justify-content: center;
+            }
+
+            .video-embed {
+                height: 260px;
+            }
         }
     </style>
 </head>
-
 <body>
+    <div class="container">
 
-<div class="container">
-
-<header class="hero">
-    <div class="hero-topbar">
-        Biomedical Engineering Portfolio
-    </div>
-
-    <div class="hero-content">
-        <h1>Maya Pankiw</h1>
-        <p class="subtitle">Biomedical Engineering Graduate Student | Cardiac Research</p>
-
-        <div class="nav">
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#publications">Publications</a>
-        </div>
-    </div>
-</header>
-
-<section id="about" class="section-card">
-    <h2>About Me</h2>
-
-    <div class="about-flex">
-        <img src="./mp-headshot.jpeg" class="headshot">
-
-        <div>
-            <p>
-                Graduate student at the University of Toronto working in cardiac engineering and hemodynamic modelling. Focused on signal processing and clinically relevant analysis of invasive cardiovascular data.
-            </p>
-
-            <div class="profile-links">
-                <a href="https://www.linkedin.com/in/mayapankiw" target="_blank">LinkedIn</a>
-                <a href="https://github.com/mayapankiw" target="_blank">GitHub</a>
+        <header class="hero">
+            <div class="hero-topbar">
+                Biomedical Engineering Portfolio
             </div>
+
+            <div class="hero-content">
+                <h1>Maya Pankiw</h1>
+                <p class="subtitle">
+                    Biomedical Engineering Graduate Student | Cardiac Research | Signal Processing
+                </p>
+
+                <nav class="nav">
+                    <a href="#about">About Me</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#publications">Publications</a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="section-card">
+                <h2>About Me</h2>
+
+                <div class="about-flex">
+                    <img src="./mp-headshot.jpeg" alt="Maya Pankiw headshot" class="headshot">
+
+                    <div>
+                        <p>
+                            I am a graduate student at the University of Toronto working in the Cardiac Catheterization Research Laboratory at Mount Sinai Hospital. My work focuses on cardiac engineering, hemodynamic modelling, invasive waveform analysis, and signal processing for clinically relevant applications.
+                        </p>
+
+                        <p>
+                            My current research centers on the development and validation of an algorithm to estimate right ventricular–pulmonary arterial coupling from invasive pressure data, with the goal of improving physiologic assessment in advanced heart failure.
+                        </p>
+
+                        <div class="profile-links">
+                            <a href="https://www.linkedin.com/in/mayapankiw" target="_blank">LinkedIn</a>
+                            <a href="https://github.com/mayapankiw" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-card">
+                <h2>Projects</h2>
+
+                <div class="project-nav">
+                    <a href="#rvpa">RV–PA Coupling</a>
+                    <a href="#sternal">Sternal Closure</a>
+                </div>
+
+                <div class="project-grid">
+
+                    <div class="project-card" id="rvpa">
+                        <h3>RV–PA Coupling Analysis Pipeline</h3>
+
+                        <p>
+                            Developed a signal processing and hemodynamic analysis pipeline to estimate right ventricular–pulmonary arterial (RV–PA) coupling from invasive pressure waveforms collected during right heart catheterization.
+                        </p>
+
+                        <p class="muted">
+                            This work integrates physiological signal processing with clinically interpretable modelling to characterize right ventricular function and its interaction with the pulmonary circulation in advanced heart failure.
+                        </p>
+
+                        <ul>
+                            <li>Processed ECG, RV, PA, and RA waveforms for synchronized multi-signal analysis</li>
+                            <li>Developed algorithms for physiologic feature detection and cardiac phase segmentation</li>
+                            <li>Implemented ensemble averaging and adaptive windowing based on cardiac timing</li>
+                            <li>Derived pressure-based metrics to estimate RV contractility and RV–PA coupling</li>
+                            <li>Designed pipeline for clinical interpretability and reproducibility</li>
+                        </ul>
+
+                        <img src="./Algo-Condensed.jpeg" alt="RV-PA Coupling algorithm overview" class="project-image">
+
+                        <p class="muted" style="margin-top: 12px;">
+                            Overview of the analysis pipeline, including signal preprocessing, feature extraction, and derivation of hemodynamic metrics used to assess RV–PA coupling.
+                        </p>
+                    </div>
+
+                    <div class="project-card" id="sternal">
+                        <h3>Sternal Closure Testing Apparatus</h3>
+
+                        <p>
+                            Designed and built a mechanical testing apparatus to evaluate the performance of sternal fixation methods under physiologically relevant cyclic loading conditions.
+                        </p>
+
+                        <p class="muted">
+                            The system simulates breathing-induced forces on the sternum to assess stability and risk of sternal dehiscence, enabling more realistic and repeatable evaluation of closure techniques.
+                        </p>
+
+                        <ul>
+                            <li>Designed mechanical system to apply controlled cyclic loading to sternal specimens</li>
+                            <li>Developed CAD models and contributed to fabrication and assembly of the apparatus</li>
+                            <li>Integrated system with Instron testing equipment for combined experimental workflows</li>
+                            <li>Supported development of repeatable testing protocols for biomechanical evaluation</li>
+                        </ul>
+
+                        <p class="muted">
+                            System simulates breathing-like cyclic loading and applies physiologic forces to replicate thoracic mechanics during post-surgical healing. The original capstone project aimed to create a standardized and reusable platform for evaluating novel sternal closure devices under clinically relevant loading conditions. :contentReference[oaicite:0]{index=0}
+                        </p>
+
+                        <div class="video-embed">
+                            <iframe
+                                src="https://drive.google.com/file/d/1st239Xb_575VyG1hRy8kA8iKE3fNtm2d0BmwfU2KDoY/preview"
+                                allow="autoplay">
+                            </iframe>
+                        </div>
+
+                        <p class="muted" style="margin-top: 12px;">
+                            Demonstration of the assembled testing apparatus and cyclic loading functionality.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <div class="section-card">
+                <h2>Publications</h2>
+                <ul>
+                    <li>
+                        <strong>Publication Title 1</strong><br>
+                        <span class="muted">Authors. Journal. Year.</span>
+                    </li>
+                    <li>
+                        <strong>Publication Title 2</strong><br>
+                        <span class="muted">Authors. Journal. Year.</span>
+                    </li>
+                    <li>
+                        <strong>Publication Title 3</strong><br>
+                        <span class="muted">Authors. Journal. Year.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer">
+            © Maya Pankiw
         </div>
     </div>
-</section>
-
-<section id="projects" class="section-card">
-    <h2>Projects</h2>
-
-    <div class="project-nav">
-        <a href="#rvpa">RV–PA Coupling</a>
-        <a href="#sternal">Sternal Closure</a>
-    </div>
-
-    <div class="project-card" id="rvpa">
-        <h3>RV–PA Coupling Analysis Pipeline</h3>
-
-        <p>
-            Developed a signal processing pipeline to estimate right ventricular–pulmonary arterial coupling using invasive waveform data.
-        </p>
-
-        <img src="./Algo-Condensed.jpeg" class="project-image">
-    </div>
-
-    <div class="project-card" id="sternal">
-        <h3>Sternal Closure Testing Apparatus</h3>
-
-        <p>
-            Designed and built a mechanical system to evaluate sternal fixation under cyclic physiological loading conditions.
-        </p>
-
-        <div class="video">
-            <iframe src="https://drive.google.com/file/d/1st239Xb_575VyG1hRy8kA8iKE3fNtm2d0BmwfU2KDoY/preview"></iframe>
-        </div>
-
-    </div>
-</section>
-
-<section id="publications" class="section-card">
-    <h2>Publications</h2>
-
-    <p>Coming soon</p>
-</section>
-
-</div>
-
 </body>
 </html>
