@@ -6,17 +6,20 @@
     <title>Maya Pankiw</title>
     <style>
         :root {
-            --bg: #f4f7f5;
-            --card: #ffffff;
-            --text: #1f2933;
-            --muted: #5f6f66;
-            --accent: #6b8f7a;
-            --accent-soft: #e6f0eb;
-            --border: #d8e3dc;
+            --bg: #f3f1e8;
+            --card: #faf8f1;
+            --text: #2f3826;
+            --muted: #5f684d;
+            --accent: #97a36a;
+            --accent-dark: #556237;
+            --accent-soft: #dfe4cf;
+            --border: #d6dac8;
+            --white-soft: #f8f7f2;
         }
 
         * {
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,55 +27,79 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .container {
-            max-width: 950px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 48px 24px 64px;
+            padding: 42px 24px 70px;
         }
 
         .hero {
-            margin-bottom: 40px;
-            padding: 32px;
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 18px;
+            border-radius: 22px;
+            overflow: hidden;
+            margin-bottom: 34px;
+        }
+
+        .hero-topbar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--accent);
+            color: var(--white-soft);
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .hero-topbar div {
+            padding: 14px 22px;
+            text-align: center;
+        }
+
+        .hero-topbar div:last-child {
+            background: var(--accent-dark);
+        }
+
+        .hero-content {
+            padding: 34px 32px 30px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            margin: 0 0 8px 0;
-            color: var(--accent);
+            margin: 0 0 10px 0;
+            font-size: 3.1rem;
+            line-height: 1.05;
+            color: var(--accent-dark);
         }
 
         .subtitle {
             margin: 0;
             color: var(--muted);
-            font-size: 1.05rem;
+            font-size: 1.08rem;
         }
 
         .nav {
-            margin-top: 20px;
+            margin-top: 26px;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .nav a {
-            display: inline-block;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: var(--accent-soft);
-            color: var(--accent);
             text-decoration: none;
+            color: var(--white-soft);
+            background: var(--accent);
+            padding: 10px 18px;
+            border-radius: 999px;
             font-weight: 600;
-            font-size: 0.95rem;
+            transition: 0.2s ease;
         }
 
         .nav a:hover {
-            opacity: 0.9;
+            background: var(--accent-dark);
         }
 
         section {
@@ -82,65 +109,100 @@
         .section-card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 28px;
+            border-radius: 22px;
+            padding: 34px 28px;
         }
 
         h2 {
-            margin-top: 0;
-            margin-bottom: 14px;
-            font-size: 1.6rem;
-            color: var(--accent);
+            margin: 0 0 18px 0;
+            font-size: 2rem;
+            color: var(--accent-dark);
         }
 
         h3 {
-            margin-bottom: 10px;
-            font-size: 1.15rem;
-            color: var(--text);
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+            color: var(--accent-dark);
         }
 
         p {
             margin-top: 0;
-            color: var(--text);
+            margin-bottom: 18px;
         }
 
         .muted {
             color: var(--muted);
         }
 
-        .project {
-            margin-top: 22px;
-            padding-top: 22px;
-            border-top: 1px solid var(--border);
+        .about-flex {
+            display: flex;
+            gap: 28px;
+            align-items: center;
         }
 
-        .project:first-of-type {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: none;
+        .headshot {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            flex-shrink: 0;
         }
 
-        .image-placeholder {
-            margin-top: 16px;
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .profile-links a {
+            text-decoration: none;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 9px 15px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .profile-links a:hover {
+            background: var(--accent);
+            color: var(--white-soft);
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 18px;
             padding: 22px;
-            border: 1.5px dashed var(--border);
-            border-radius: 14px;
-            background: #fcfdff;
-            color: var(--muted);
-            text-align: center;
-            font-size: 0.95rem;
+            background: rgba(255,255,255,0.35);
         }
 
         .project-image {
             width: 100%;
-            margin-top: 16px;
+            display: block;
+            margin-top: 14px;
             border-radius: 14px;
             border: 1px solid var(--border);
-            display: block;
+        }
+
+        .image-placeholder {
+            margin-top: 14px;
+            padding: 24px;
+            border: 1.5px dashed var(--border);
+            border-radius: 14px;
+            color: var(--muted);
+            text-align: center;
+            background: rgba(255,255,255,0.4);
         }
 
         ul {
             padding-left: 20px;
+            margin-top: 10px;
             margin-bottom: 0;
         }
 
@@ -148,55 +210,48 @@
             margin-bottom: 10px;
         }
 
-        a {
-            color: var(--accent);
-        }
-
         .footer {
-            margin-top: 34px;
             text-align: center;
+            margin-top: 30px;
             color: var(--muted);
             font-size: 0.95rem;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 760px) {
             .container {
-                padding: 28px 16px 48px;
+                padding: 24px 14px 50px;
             }
 
-            .hero,
+            .hero-content,
             .section-card {
-                padding: 22px;
+                padding: 24px 20px;
+            }
+
+            .hero-topbar {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-topbar div:last-child {
+                background: var(--accent);
+                border-top: 1px solid rgba(255,255,255,0.15);
             }
 
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
-        }
 
-        .about-flex {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        
-        .headshot {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-        }
-        
-        @media (max-width: 700px) {
             .about-flex {
                 flex-direction: column;
                 text-align: center;
             }
-        
+
+            .profile-links {
+                justify-content: center;
+            }
+
             .headshot {
-                width: 130px;
-                height: 130px;
+                width: 140px;
+                height: 140px;
             }
         }
     </style>
@@ -205,97 +260,105 @@
     <div class="container">
 
         <header class="hero">
-            <h1>Maya Pankiw</h1>
-            <p class="subtitle">Biomedical Engineering Graduate Student | Cardiac Research | Signal Processing</p>
+            <div class="hero-topbar">
+                <div>Maya Pankiw</div>
+                <div>Biomedical Engineering Portfolio</div>
+            </div>
 
-            <nav class="nav">
-                <a href="#about">About Me</a>
-                <a href="#rvpa">RV:PA Coupling Algorithm</a>
-                <a href="#sternal">Sternal Closure Testing Apparatus</a>
-                <a href="#publications">Publications</a>
-                <a href="https://github.com/mayapankiw" target="_blank">GitHub</a>
-                <a href="#" target="_blank">LinkedIn</a>
-            </nav>
+            <div class="hero-content">
+                <h1>Maya Pankiw</h1>
+                <p class="subtitle">
+                    Biomedical Engineering Graduate Student | Cardiac Research | Signal Processing
+                </p>
+
+                <nav class="nav">
+                    <a href="#about">About Me</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#publications">Publications</a>
+                </nav>
+            </div>
         </header>
 
         <section id="about">
-            <div class="section-card about-container">
-                
+            <div class="section-card">
+                <h2>About Me</h2>
+
                 <div class="about-flex">
-                    
-                    <img src="mp-headshot.jpeg" alt="Maya Pankiw headshot" class="headshot">
-        
+                    <img src="./mp-headshot.jpeg" alt="Maya Pankiw headshot" class="headshot">
+
                     <div>
-                        <h2>About Me</h2>
                         <p>
-                            I am a graduate student at the University of Toronto working in the Cardiac Catheterization Research Laboratory at Mount Sinai Hospital.
-                            My work focuses on cardiac engineering, hemodynamic modelling, invasive waveform analysis, and signal processing for clinically relevant applications.
+                            I am a graduate student at the University of Toronto working in the Cardiac Catheterization Research Laboratory at Mount Sinai Hospital. My work focuses on cardiac engineering, hemodynamic modelling, invasive waveform analysis, and signal processing for clinically relevant applications.
                         </p>
+
                         <p>
                             My current research centers on the development and validation of an algorithm to estimate right ventricular–pulmonary arterial coupling from invasive pressure data, with the goal of improving physiologic assessment in advanced heart failure.
                         </p>
+
+                        <div class="profile-links">
+                            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                            <a href="https://github.com/mayapankiw" target="_blank">GitHub</a>
+                        </div>
                     </div>
-        
                 </div>
-        
             </div>
         </section>
 
-        <section id="rvpa">
+        <section id="projects">
             <div class="section-card">
-                <h2>Project</h2>
-                <h3>RV:PA Coupling Algorithm</h3>
-                <p>
-                    Developed a signal processing and hemodynamic analysis pipeline in Python to estimate right ventricular–pulmonary arterial coupling using invasive pressure waveforms collected during right heart catheterization.
-                </p>
-                <p class="muted">
-                    This project includes ECG synchronization, pressure waveform preprocessing, feature detection, physiologic windowing, ensemble averaging, and derivation of pressure-based indices used to characterize RV performance and RV–PA interaction.
-                </p>
+                <h2>Projects</h2>
 
-                <ul>
-                    <li>Processed ECG, RV, PA, and RA waveform data for physiologic feature extraction</li>
-                    <li>Developed algorithms for identifying waveform landmarks and timing relationships</li>
-                    <li>Supported clinical interpretation through quantitative hemodynamic modelling</li>
-                </ul>
+                <div class="project-grid">
 
-                <div class="image-placeholder">
-                    Add a pipeline diagram, representative plot, or algorithm output screenshot here.
-                    <br><br>
-                    Example file name: <strong>rvpa_algorithm.png</strong>
+                    <div class="project-card" id="rvpa">
+                        <h3>RV–PA Coupling Analysis Pipeline</h3>
+                        <p>
+                            Developed a signal processing and hemodynamic analysis pipeline in Python to estimate right ventricular–pulmonary arterial coupling using invasive pressure waveforms collected during right heart catheterization.
+                        </p>
+                        <p class="muted">
+                            This work includes ECG synchronization, pressure waveform preprocessing, feature detection, physiologic windowing, ensemble averaging, and derivation of pressure-based indices used to characterize RV performance and RV–PA interaction.
+                        </p>
+
+                        <ul>
+                            <li>Processed ECG, RV, PA, and RA waveform data for physiologic feature extraction</li>
+                            <li>Developed algorithms for identifying waveform landmarks and timing relationships</li>
+                            <li>Supported clinical interpretation through quantitative hemodynamic modelling</li>
+                        </ul>
+
+                        <div class="image-placeholder">
+                            Add RV–PA pipeline diagram or waveform output here
+                        </div>
+
+                        <!-- Replace placeholder with image when ready
+                        <img src="./rvpa_pipeline.png" alt="RV-PA Coupling pipeline" class="project-image">
+                        -->
+                    </div>
+
+                    <div class="project-card" id="sternal">
+                        <h3>Sternal Closure Testing Apparatus</h3>
+                        <p>
+                            Designed and developed a mechanical testing apparatus for evaluating sternal closure performance as part of my undergraduate capstone project.
+                        </p>
+                        <p class="muted">
+                            This work involved CAD design, mechanical system development, iterative prototyping, and design considerations for repeatable experimental testing.
+                        </p>
+
+                        <ul>
+                            <li>Created detailed CAD models of the testing system</li>
+                            <li>Contributed to mechanical design and apparatus development</li>
+                            <li>Supported evaluation of closure performance under controlled testing conditions</li>
+                        </ul>
+
+                        <div class="image-placeholder">
+                            Add CAD rendering or apparatus image here
+                        </div>
+
+                        <!-- Replace placeholder with image when ready
+                        <img src="./sternal_apparatus.png" alt="Sternal closure testing apparatus" class="project-image">
+                        -->
+                    </div>
+
                 </div>
-
-                <!-- Example image insert:
-                <img src="rvpa_algorithm.png" alt="RV:PA Coupling Algorithm diagram" class="project-image">
-                -->
-            </div>
-        </section>
-
-        <section id="sternal">
-            <div class="section-card">
-                <h2>Project</h2>
-                <h3>Sternal Closure Testing Apparatus</h3>
-                <p>
-                    Designed and developed a mechanical testing apparatus for evaluating sternal closure performance as part of my undergraduate capstone project.
-                </p>
-                <p class="muted">
-                    This work involved CAD design, mechanical system development, iterative prototyping, and design considerations for repeatable experimental testing.
-                </p>
-
-                <ul>
-                    <li>Created detailed CAD models of the testing system</li>
-                    <li>Contributed to mechanical design and apparatus development</li>
-                    <li>Supported evaluation of closure performance under controlled testing conditions</li>
-                </ul>
-
-                <div class="image-placeholder">
-                    Add a CAD rendering, apparatus photo, or testing setup image here.
-                    <br><br>
-                    Example file name: <strong>sternal_apparatus.png</strong>
-                </div>
-
-                <!-- Example image insert:
-                <img src="sternal_apparatus.png" alt="Sternal closure testing apparatus" class="project-image">
-                -->
             </div>
         </section>
 
@@ -322,7 +385,6 @@
         <div class="footer">
             © Maya Pankiw
         </div>
-
     </div>
 </body>
 </html>
