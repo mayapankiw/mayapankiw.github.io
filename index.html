@@ -1,31 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maya Pankiw</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #475569;
+            --accent: #1e3a8a;
+            --accent-soft: #dbeafe;
+            --border: #dbe3ea;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 48px 24px 64px;
+        }
+
+        .hero {
+            margin-bottom: 40px;
+            padding: 32px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 0 0 8px 0;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .nav {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            opacity: 0.9;
+        }
+
+        section {
+            margin-top: 28px;
+        }
+
+        .section-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            color: var(--text);
+        }
+
+        p {
+            margin-top: 0;
+            color: var(--text);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .project {
+            margin-top: 22px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .image-placeholder {
+            margin-top: 16px;
+            padding: 22px;
+            border: 1.5px dashed var(--border);
+            border-radius: 14px;
+            background: #fcfdff;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .project-image {
+            width: 100%;
+            margin-top: 16px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        .footer {
+            margin-top: 34px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 28px 16px 48px;
+            }
+
+            .hero,
+            .section-card {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
-<body style="font-family: Arial; max-width: 800px; margin: auto; padding: 40px;">
+<body>
+    <div class="container">
 
-    <h1>Maya Pankiw</h1>
-    <p>Biomedical Engineering Graduate Student | Cardiac Research</p>
+        <header class="hero">
+            <h1>Maya Pankiw</h1>
+            <p class="subtitle">Biomedical Engineering Graduate Student | Cardiac Research | Signal Processing</p>
 
-    <h2>About</h2>
-    <p>
-        I am a graduate student at the University of Toronto working in the Cardiac Catheterization Research Lab at Mount Sinai Hospital.
-        My work focuses on hemodynamic modelling, signal processing, and right heart failure prediction.
-    </p>
+            <nav class="nav">
+                <a href="#about">About Me</a>
+                <a href="#rvpa">RV:PA Coupling Algorithm</a>
+                <a href="#sternal">Sternal Closure Testing Apparatus</a>
+                <a href="#publications">Publications</a>
+                <a href="https://github.com/mayapankiw" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </nav>
+        </header>
 
-    <h2>Projects</h2>
-    <ul>
-        <li>RV:PA Coupling Pipeline (Python)</li>
-        <li>Hemodynamic Signal Analysis</li>
-        <li>Capstone: Mechanical Testing Apparatus</li>
-    </ul>
+        <section id="about">
+            <div class="section-card">
+                <h2>About Me</h2>
+                <p>
+                    I am a graduate student at the University of Toronto working in the Cardiac Catheterization Research Laboratory at Mount Sinai Hospital.
+                    My work focuses on cardiac engineering, hemodynamic modelling, invasive waveform analysis, and signal processing for clinically relevant applications.
+                </p>
+                <p>
+                    My current research centers on the development and validation of an algorithm to estimate right ventricular–pulmonary arterial coupling from invasive pressure data, with the goal of improving physiologic assessment in advanced heart failure.
+                </p>
+            </div>
+        </section>
 
-    <h2>Links</h2>
-    <ul>
-        <li><a href="https://github.com/mayapankiw">GitHub</a></li>
-        <li><a href="#">LinkedIn</a></li>
-    </ul>
+        <section id="rvpa">
+            <div class="section-card">
+                <h2>Project</h2>
+                <h3>RV:PA Coupling Algorithm</h3>
+                <p>
+                    Developed a signal processing and hemodynamic analysis pipeline in Python to estimate right ventricular–pulmonary arterial coupling using invasive pressure waveforms collected during right heart catheterization.
+                </p>
+                <p class="muted">
+                    This project includes ECG synchronization, pressure waveform preprocessing, feature detection, physiologic windowing, ensemble averaging, and derivation of pressure-based indices used to characterize RV performance and RV–PA interaction.
+                </p>
 
+                <ul>
+                    <li>Processed ECG, RV, PA, and RA waveform data for physiologic feature extraction</li>
+                    <li>Developed algorithms for identifying waveform landmarks and timing relationships</li>
+                    <li>Supported clinical interpretation through quantitative hemodynamic modelling</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    Add a pipeline diagram, representative plot, or algorithm output screenshot here.
+                    <br><br>
+                    Example file name: <strong>rvpa_algorithm.png</strong>
+                </div>
+
+                <!-- Example image insert:
+                <img src="rvpa_algorithm.png" alt="RV:PA Coupling Algorithm diagram" class="project-image">
+                -->
+            </div>
+        </section>
+
+        <section id="sternal">
+            <div class="section-card">
+                <h2>Project</h2>
+                <h3>Sternal Closure Testing Apparatus</h3>
+                <p>
+                    Designed and developed a mechanical testing apparatus for evaluating sternal closure performance as part of my undergraduate capstone project.
+                </p>
+                <p class="muted">
+                    This work involved CAD design, mechanical system development, iterative prototyping, and design considerations for repeatable experimental testing.
+                </p>
+
+                <ul>
+                    <li>Created detailed CAD models of the testing system</li>
+                    <li>Contributed to mechanical design and apparatus development</li>
+                    <li>Supported evaluation of closure performance under controlled testing conditions</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    Add a CAD rendering, apparatus photo, or testing setup image here.
+                    <br><br>
+                    Example file name: <strong>sternal_apparatus.png</strong>
+                </div>
+
+                <!-- Example image insert:
+                <img src="sternal_apparatus.png" alt="Sternal closure testing apparatus" class="project-image">
+                -->
+            </div>
+        </section>
+
+        <section id="publications">
+            <div class="section-card">
+                <h2>Publications</h2>
+                <ul>
+                    <li>
+                        <strong>Publication Title 1</strong><br>
+                        <span class="muted">Authors. Journal. Year.</span>
+                    </li>
+                    <li>
+                        <strong>Publication Title 2</strong><br>
+                        <span class="muted">Authors. Journal. Year.</span>
+                    </li>
+                    <li>
+                        <strong>Publication Title 3</strong><br>
+                        <span class="muted">Authors. Journal. Year.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer">
+            © Maya Pankiw
+        </div>
+
+    </div>
 </body>
 </html>
