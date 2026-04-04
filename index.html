@@ -45,23 +45,14 @@
         }
 
         .hero-topbar {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--accent);
+            background: var(--accent-dark);
             color: var(--white-soft);
-            font-size: 0.88rem;
-            letter-spacing: 0.04em;
+            text-align: center;
+            padding: 16px 0;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             font-style: italic;
-        }
-
-        .hero-topbar div {
-            padding: 14px 22px;
-            text-align: center;
-        }
-
-        .hero-topbar div:last-child {
-            background: var(--accent-dark);
         }
 
         .hero-content {
@@ -170,6 +161,28 @@
             color: var(--white-soft);
         }
 
+        .project-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .project-nav a {
+            text-decoration: none;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-nav a:hover {
+            background: var(--accent);
+            color: var(--white-soft);
+        }
+
         .project-grid {
             display: grid;
             gap: 20px;
@@ -188,16 +201,6 @@
             margin-top: 14px;
             border-radius: 14px;
             border: 1px solid var(--border);
-        }
-
-        .image-placeholder {
-            margin-top: 14px;
-            padding: 24px;
-            border: 1.5px dashed var(--border);
-            border-radius: 14px;
-            color: var(--muted);
-            text-align: center;
-            background: rgba(255,255,255,0.4);
         }
 
         ul {
@@ -227,15 +230,6 @@
                 padding: 24px 20px;
             }
 
-            .hero-topbar {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-topbar div:last-child {
-                background: var(--accent);
-                border-top: 1px solid rgba(255,255,255,0.15);
-            }
-
             h1 {
                 font-size: 2.3rem;
             }
@@ -253,6 +247,11 @@
                 width: 140px;
                 height: 140px;
             }
+
+            .nav,
+            .project-nav {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -261,8 +260,7 @@
 
         <header class="hero">
             <div class="hero-topbar">
-                <div>Maya Pankiw</div>
-                <div>Biomedical Engineering Portfolio</div>
+                Biomedical Engineering Portfolio
             </div>
 
             <div class="hero-content">
@@ -296,7 +294,7 @@
                         </p>
 
                         <div class="profile-links">
-                            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/mayapankiw" target="_blank">LinkedIn</a>
                             <a href="https://github.com/mayapankiw" target="_blank">GitHub</a>
                         </div>
                     </div>
@@ -307,6 +305,11 @@
         <section id="projects">
             <div class="section-card">
                 <h2>Projects</h2>
+
+                <div class="project-nav">
+                    <a href="#rvpa">RV–PA Coupling</a>
+                    <a href="#sternal">Sternal Closure</a>
+                </div>
 
                 <div class="project-grid">
 
@@ -325,13 +328,11 @@
                             <li>Supported clinical interpretation through quantitative hemodynamic modelling</li>
                         </ul>
 
-                        <div class="image-placeholder">
-                            Add RV–PA pipeline diagram or waveform output here
-                        </div>
+                        <img src="./Algo-Condensed.png" alt="RV-PA Coupling algorithm overview" class="project-image">
 
-                        <!-- Replace placeholder with image when ready
-                        <img src="./rvpa_pipeline.png" alt="RV-PA Coupling pipeline" class="project-image">
-                        -->
+                        <p class="muted" style="margin-top: 12px;">
+                            Condensed overview of the RV–PA coupling analysis pipeline, including signal preprocessing, feature extraction, and derivation of hemodynamic metrics.
+                        </p>
                     </div>
 
                     <div class="project-card" id="sternal">
@@ -349,11 +350,8 @@
                             <li>Supported evaluation of closure performance under controlled testing conditions</li>
                         </ul>
 
-                        <div class="image-placeholder">
-                            Add CAD rendering or apparatus image here
-                        </div>
-
-                        <!-- Replace placeholder with image when ready
+                        <!-- Add image later when ready -->
+                        <!--
                         <img src="./sternal_apparatus.png" alt="Sternal closure testing apparatus" class="project-image">
                         -->
                     </div>
