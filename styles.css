@@ -261,10 +261,6 @@ p {
     flex-direction: column;
 }
 
-.pub-card .profile-links {
-    margin-top: auto;
-}
-
 .project-card p:last-child,
 .pub-card p:last-child {
     margin-bottom: 0;
