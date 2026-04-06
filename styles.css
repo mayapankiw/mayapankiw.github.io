@@ -220,16 +220,14 @@ p {
     box-shadow: var(--shadow);
 }
 
-.profile-links,
-.inline-links {
+.profile-links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 10px;
 }
 
-.profile-links a,
-.inline-links a {
+.profile-links a {
     text-decoration: none;
     color: var(--accent-dark);
     background: var(--accent-soft);
@@ -239,8 +237,7 @@ p {
     transition: 0.2s ease;
 }
 
-.profile-links a:hover,
-.inline-links a:hover {
+.profile-links a:hover {
     background: var(--accent);
     color: var(--white-soft);
 }
@@ -265,17 +262,8 @@ p {
     flex-direction: column;
 }
 
-.project-card .inline-links {
+.project-button {
     margin-top: auto;
-    justify-content: flex-start;
-}
-
-.project-card > .button {
-    margin-top: auto;
-    align-self: flex-start;
-}
-
-.project-card .inline-links .button {
     align-self: flex-start;
 }
 
