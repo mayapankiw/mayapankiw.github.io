@@ -280,8 +280,8 @@ p {
 
 .pub-card .muted {
     display: block;
-    margin-bottom: 12px;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    line-height: 1.35;
 }
 
 .pub-card .profile-links {
