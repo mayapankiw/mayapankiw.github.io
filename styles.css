@@ -355,3 +355,8 @@ li {
         gap: 8px;
     }
 }
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
