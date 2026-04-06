@@ -361,3 +361,6 @@ li {
         gap: 8px;
     }
 }
+.project-card .inline-links {
+    margin-top: auto;
+}
