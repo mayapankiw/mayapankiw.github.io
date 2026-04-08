@@ -301,7 +301,7 @@ h2, h3 {
         height: 260px;
     }
 }
-.highlight {
+.highlight-statement {
     background: var(--accent-soft);
     border-left: 4px solid var(--accent);
     padding: 16px 18px;
