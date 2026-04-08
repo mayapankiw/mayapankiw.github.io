@@ -413,4 +413,10 @@ li {
     grid-column: 1 / -1;
     justify-self: center;
     width: calc(50% - 10px);
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
 }
