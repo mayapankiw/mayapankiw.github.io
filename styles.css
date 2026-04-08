@@ -115,8 +115,17 @@ img {
     margin-top: 10px;
 }
 
+/* ========================= */
+/* BUTTONS (FIXED GLOBAL) */
+/* ========================= */
+
 .button,
-a.button {
+a.button,
+.profile-links a,
+.cta-row a,
+.hero-actions a,
+.home-actions a,
+.action-row a {
     display: inline-block;
     text-decoration: none;
     border-radius: 999px;
@@ -124,15 +133,20 @@ a.button {
     font-weight: 700;
     background: var(--accent);
     color: var(--white-soft) !important;
-    border: none;
     transition: 0.2s ease;
 }
 
 .button:hover,
-a.button:hover {
+a.button:hover,
+.profile-links a:hover,
+.cta-row a:hover,
+.hero-actions a:hover,
+.home-actions a:hover,
+.action-row a:hover {
     background: var(--accent-dark);
-    color: var(--white-soft) !important;
 }
+
+/* ========================= */
 
 .section-card {
     background: var(--card);
@@ -149,12 +163,7 @@ a.button:hover {
     margin-bottom: 8px;
 }
 
-h2 {
-    color: var(--accent-dark);
-    margin-top: 0;
-}
-
-h3 {
+h2, h3 {
     color: var(--accent-dark);
     margin-top: 0;
 }
@@ -164,15 +173,21 @@ h3 {
 }
 
 /* ========================= */
-/* ABOUT */
-/* supports existing HTML: .about-flex and .headshot */
+/* ABOUT (FINAL FIX) */
 /* ========================= */
 
 .about-flex {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
-    flex-wrap: wrap;
+
+    /* 🔥 KEY FIX */
+    flex-wrap: nowrap;
+}
+
+.about-flex > div {
+    flex: 1;
+    min-width: 0;
 }
 
 .headshot {
@@ -185,29 +200,6 @@ h3 {
     flex-shrink: 0;
     border: 4px solid var(--accent-soft);
     box-shadow: var(--shadow);
-}
-
-.profile-links {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 18px;
-}
-
-.profile-links a {
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 999px;
-    padding: 11px 18px;
-    font-weight: 700;
-    background: var(--accent);
-    color: var(--white-soft) !important;
-    transition: 0.2s ease;
-}
-
-.profile-links a:hover {
-    background: var(--accent-dark);
-    color: var(--white-soft) !important;
 }
 
 /* ========================= */
@@ -256,48 +248,8 @@ h3 {
     border-radius: 20px;
     padding: 22px;
     background: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 4px 14px rgba(85, 98, 55, 0.04);
 }
 
-/* ========================= */
-/* HOME PAGE CTA SUPPORT */
-/* fixes cases where buttons were not using .button */
-/* ========================= */
-
-.cta-row,
-.home-actions,
-.hero-actions,
-.action-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 18px;
-}
-
-.cta-row a,
-.home-actions a,
-.hero-actions a,
-.action-row a {
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 999px;
-    padding: 11px 18px;
-    font-weight: 700;
-    background: var(--accent);
-    color: var(--white-soft) !important;
-    transition: 0.2s ease;
-}
-
-.cta-row a:hover,
-.home-actions a:hover,
-.hero-actions a:hover,
-.action-row a:hover {
-    background: var(--accent-dark);
-    color: var(--white-soft) !important;
-}
-
-/* ========================= */
-/* EMBEDS / DETAIL PAGES */
 /* ========================= */
 
 .video-embed {
@@ -311,46 +263,21 @@ h3 {
 .video-embed iframe {
     width: 100%;
     height: 100%;
-    border: 0;
-}
-
-.back-link {
-    font-weight: 700;
-    color: var(--accent-dark);
-    text-decoration: none;
-}
-
-.back-link:hover {
-    text-decoration: underline;
 }
 
 .footer {
     text-align: center;
     color: var(--muted);
-    padding-top: 10px;
 }
 
 /* ========================= */
-/* RESPONSIVE */
+/* MOBILE */
 /* ========================= */
 
 @media (max-width: 860px) {
-    .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero {
-        padding: 32px 24px;
-    }
-
-    .hero h1 {
-        font-size: 2.35rem;
-    }
 
     .about-flex {
         flex-direction: column;
-        align-items: flex-start;
     }
 
     .headshot {
