@@ -115,7 +115,8 @@ img {
     margin-top: 10px;
 }
 
-.button {
+.button,
+a.button {
     display: inline-block;
     text-decoration: none;
     border-radius: 999px;
@@ -127,7 +128,8 @@ img {
     transition: 0.2s ease;
 }
 
-.button:hover {
+.button:hover,
+a.button:hover {
     background: var(--accent-dark);
     color: var(--white-soft) !important;
 }
@@ -163,28 +165,26 @@ h3 {
 
 /* ========================= */
 /* ABOUT */
+/* supports existing HTML: .about-flex and .headshot */
 /* ========================= */
 
-.about-content {
+.about-flex {
     display: flex;
     align-items: center;
     gap: 40px;
     flex-wrap: wrap;
 }
 
-.about-content img {
+.headshot {
     width: 220px;
     height: 220px;
+    min-width: 220px;
+    max-width: 220px;
     object-fit: cover;
     border-radius: 50%;
     flex-shrink: 0;
     border: 4px solid var(--accent-soft);
     box-shadow: var(--shadow);
-}
-
-.about-text {
-    flex: 1;
-    min-width: 260px;
 }
 
 .profile-links {
@@ -196,12 +196,12 @@ h3 {
 
 .profile-links a {
     display: inline-block;
-    padding: 10px 16px;
-    background: var(--accent);
-    color: var(--white-soft) !important;
     text-decoration: none;
     border-radius: 999px;
+    padding: 11px 18px;
     font-weight: 700;
+    background: var(--accent);
+    color: var(--white-soft) !important;
     transition: 0.2s ease;
 }
 
@@ -260,6 +260,43 @@ h3 {
 }
 
 /* ========================= */
+/* HOME PAGE CTA SUPPORT */
+/* fixes cases where buttons were not using .button */
+/* ========================= */
+
+.cta-row,
+.home-actions,
+.hero-actions,
+.action-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.cta-row a,
+.home-actions a,
+.hero-actions a,
+.action-row a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 11px 18px;
+    font-weight: 700;
+    background: var(--accent);
+    color: var(--white-soft) !important;
+    transition: 0.2s ease;
+}
+
+.cta-row a:hover,
+.home-actions a:hover,
+.hero-actions a:hover,
+.action-row a:hover {
+    background: var(--accent-dark);
+    color: var(--white-soft) !important;
+}
+
+/* ========================= */
 /* EMBEDS / DETAIL PAGES */
 /* ========================= */
 
@@ -311,14 +348,16 @@ h3 {
         font-size: 2.35rem;
     }
 
-    .about-content {
+    .about-flex {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .about-content img {
+    .headshot {
         width: 180px;
         height: 180px;
+        min-width: 180px;
+        max-width: 180px;
     }
 
     .project-grid,
