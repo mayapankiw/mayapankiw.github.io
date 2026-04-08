@@ -408,3 +408,9 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+
+.project-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 10px);
+}
